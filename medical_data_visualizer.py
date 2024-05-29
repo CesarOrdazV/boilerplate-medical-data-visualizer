@@ -7,7 +7,7 @@ import numpy as np
 df = pd.read_csv('medical_examination.csv')
 
 # 2
-df['overweight'] = np.where(round(10000 * df['weight'] / (df['height'] * df['height']), 1) < 25, 0, 1)
+df['overweight'] = np.where(10000 * df['weight'] / (df['height'] * df['height']) > 25, 1, 0)
 
 # 3
 df['cholesterol'] = np.where(df['cholesterol'] == 1, 0, 1)
